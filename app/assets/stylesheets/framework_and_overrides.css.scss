@@ -34,12 +34,45 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
+
+main a {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+main table {
+  @extend .table;
+  @extend .table-striped;
+}
+
+main form {
+  @extend .form;
+}
+
 section {
   @extend .row;
   margin-top: 20px;
   }
+
+form input:not([type="submit"]), form select {
+  @extend .form-control
+}
+
+form input[type="submit"] {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+div.field_with_errors {
+  @extend .form-group; 
+  @extend .has-error;
+}
+
+#error_explanation {
+  @extend .alert;
+  @extend .alert-danger;
+}

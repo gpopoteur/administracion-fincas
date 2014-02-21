@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vecino_id: 1
+  administrador_id: 1
+  fecha: 2014-02-19
+  descripcion: MyString
+  importe: 1.5
+  pagada: 
+
+two:
+  vecino_id: 1
+  administrador_id: 1
+  fecha: 2014-02-19
+  descripcion: MyString
+  importe: 1.5
+  pagada: 

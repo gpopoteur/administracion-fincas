@@ -1,0 +1,25 @@
+= form_for @ficha do |f|
+  - if @ficha.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@ficha.errors.count, "error")} prohibited this ficha from being saved:"
+      %ul
+        - @ficha.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :vecino
+    = f.collection_select :vecino_id, Vecino.all, :id, :nombre
+  .field
+    = f.label :administrador
+    = f.collection_select :administrador_id, Administrador.all, :id, :nombre
+  .field
+    = f.label :fecha
+    = f.date_select :fecha
+  .field
+    = f.label :descripcion
+    = f.text_field :descripcion
+  .field
+    = f.label :importe
+    = f.text_field :importe
+  .actions
+    = f.submit 'Save'

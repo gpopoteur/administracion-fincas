@@ -1,0 +1,19 @@
+%h1 Listing Facturas
+
+%table
+  %tr
+    %th Vecino
+    %th Monto Total
+    %th Fecha
+    %th
+
+  - @facturas.each do |factura|
+    %tr
+      %td= factura.vecino.nombre
+      %td= factura.fichas.sum(:importe, :conditions => 'factura_id = ' + factura.id.to_s)
+      %td= l(factura.created_at, :format => :short)
+      %td= link_to 'Show', factura
+
+%br
+
+= link_to 'New Facturas', facturas_create_path

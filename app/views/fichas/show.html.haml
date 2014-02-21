@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Vecino:
+  = @ficha.vecino_id
+%p
+  %b Administrador:
+  = @ficha.administrador_id
+%p
+  %b Fecha:
+  = l(@ficha.fecha, :format => :short)
+%p
+  %b Descripcion:
+  = @ficha.descripcion
+%p
+  %b Importe:
+  = @ficha.importe
+%p
+  %b Pagada:
+  = @ficha.pagada
+
+= link_to 'Edit', edit_ficha_path(@ficha)
+\|
+= link_to 'Back', fichas_path

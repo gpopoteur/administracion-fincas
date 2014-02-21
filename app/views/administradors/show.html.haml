@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @administrador.nombre
+
+= link_to 'Edit', edit_administrador_path(@administrador)
+\|
+= link_to 'Back', administradors_path

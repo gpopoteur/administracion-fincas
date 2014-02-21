@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @materium.nombre
+%p
+  %b Horas:
+  = @materium.horas
+
+= link_to 'Edit', edit_materium_path(@materium)
+\|
+= link_to 'Back', materia_path

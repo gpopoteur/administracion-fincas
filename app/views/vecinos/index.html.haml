@@ -1,0 +1,31 @@
+%h1 Listing vecinos
+
+%table
+  %tr
+    %th Dni
+    %th Nombre
+    %th Apellidos
+    %th Direccion
+    %th Cod postal
+    %th Ciudad
+    %th Telefono
+    %th
+    %th
+    %th
+
+  - @vecinos.each do |vecino|
+    %tr
+      %td= vecino.DNI
+      %td= vecino.nombre
+      %td= vecino.apellidos
+      %td= vecino.direccion
+      %td= vecino.cod_postal
+      %td= vecino.ciudad
+      %td= vecino.telefono
+      %td= link_to 'Show', vecino, :class => 'btn btn-default'
+      %td= link_to 'Edit', edit_vecino_path(vecino)
+      %td= link_to 'Destroy', vecino, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Vecino', new_vecino_path

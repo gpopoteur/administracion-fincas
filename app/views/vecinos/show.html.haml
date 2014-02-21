@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Dni:
+  = @vecino.DNI
+%p
+  %b Nombre:
+  = @vecino.nombre
+%p
+  %b Apellidos:
+  = @vecino.apellidos
+%p
+  %b Direccion:
+  = @vecino.direccion
+%p
+  %b Cod postal:
+  = @vecino.cod_postal
+%p
+  %b Ciudad:
+  = @vecino.ciudad
+%p
+  %b Telefono:
+  = @vecino.telefono
+
+= link_to 'Edit', edit_vecino_path(@vecino)
+\|
+= link_to 'Back', vecinos_path

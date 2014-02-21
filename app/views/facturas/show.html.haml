@@ -1,0 +1,32 @@
+.row
+	.col-md-12
+		%h1 
+			Factura ID: 
+			= @factura.id
+.row
+	.col-md-6
+		%h3
+			Vecino:
+			= @factura.vecino.nombre
+	.col-md-6
+		%h3
+			Fecha:
+			= l(@factura.created_at, :format => :short)
+%hr
+
+%h3 Fichas
+%table
+	%tr
+		%th Administrador
+		%th Fecha
+		%th Descripcion
+		%th Importe
+		%th Pagada
+
+	- @factura.fichas.each do |ficha|
+		%tr
+			%td= ficha.administrador.nombre
+			%td= l(ficha.fecha, :format => :short)
+			%td= ficha.descripcion
+			%td= ficha.importe
+			%td= raw(ficha.pagada ? '<span class="label label-success">Pagada</span>' : '<span class="label label-warning">Pendiente</span>')

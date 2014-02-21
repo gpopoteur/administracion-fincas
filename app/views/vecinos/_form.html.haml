@@ -1,0 +1,31 @@
+= form_for @vecino do |f|
+  - if @vecino.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@vecino.errors.count, "error")} prohibited this vecino from being saved:"
+      %ul
+        - @vecino.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :DNI
+    = f.text_field :DNI
+  .field
+    = f.label :nombre
+    = f.text_field :nombre
+  .field
+    = f.label :apellidos
+    = f.text_field :apellidos
+  .field
+    = f.label :direccion
+    = f.text_field :direccion
+  .field
+    = f.label :cod_postal
+    = f.text_field :cod_postal
+  .field
+    = f.label :ciudad
+    = f.text_field :ciudad
+  .field
+    = f.label :telefono
+    = f.text_field :telefono
+  .actions
+    = f.submit 'Save'

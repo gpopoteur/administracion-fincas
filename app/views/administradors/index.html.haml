@@ -1,0 +1,19 @@
+%h1 Listing administradors
+
+%table
+  %tr
+    %th Nombre
+    %th
+    %th
+    %th
+
+  - @administradors.each do |administrador|
+    %tr
+      %td= administrador.nombre
+      %td= link_to 'Show', administrador
+      %td= link_to 'Edit', edit_administrador_path(administrador)
+      %td= link_to 'Destroy', administrador, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Administrador', new_administrador_path

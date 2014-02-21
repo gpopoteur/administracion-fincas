@@ -11,6 +11,77 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140219103451) do
+
+  create_table "administradors", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cursos", force: true do |t|
+    t.string   "nombre"
+    t.integer  "duracion"
+    t.float    "precio"
+    t.integer  "capacidad_curso"
+    t.date     "fecha_inicio"
+    t.date     "fecha_fin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facturas", force: true do |t|
+    t.integer  "vecino_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fichas", force: true do |t|
+    t.integer  "vecino_id"
+    t.integer  "administrador_id"
+    t.date     "fecha"
+    t.string   "descripcion"
+    t.float    "importe"
+    t.boolean  "pagada"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "factura_id"
+  end
+
+  create_table "materia", force: true do |t|
+    t.string   "nombre"
+    t.integer  "horas"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "materia_cursos", force: true do |t|
+    t.integer  "curso_id"
+    t.integer  "materia_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profesors", force: true do |t|
+    t.string   "nombre"
+    t.string   "apellidos"
+    t.string   "direccion"
+    t.string   "telefono"
+    t.float    "sueldo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vecinos", force: true do |t|
+    t.string   "DNI"
+    t.string   "nombre"
+    t.string   "apellidos"
+    t.string   "direccion"
+    t.string   "cod_postal"
+    t.string   "ciudad"
+    t.string   "telefono"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

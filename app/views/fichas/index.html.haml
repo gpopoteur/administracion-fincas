@@ -1,0 +1,29 @@
+%h1 Listing fichas
+
+%table
+  %tr
+    %th Vecino
+    %th Administrador
+    %th Fecha
+    %th Descripcion
+    %th Importe
+    %th Pagada
+    %th
+    %th
+    %th
+
+  - @fichas.each do |ficha|
+    %tr
+      %td= ficha.vecino.nombre
+      %td= ficha.administrador.nombre
+      %td= l(ficha.fecha, :format => :short)
+      %td= ficha.descripcion
+      %td= ficha.importe
+      %td= raw(ficha.pagada ? '<span class="label label-success">Pagada</span>' : '<span class="label label-warning">Pendiente</span>')
+      %td= link_to 'Show', ficha
+      %td= link_to 'Edit', edit_ficha_path(ficha)
+      %td= link_to 'Destroy', ficha, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Ficha', new_ficha_path

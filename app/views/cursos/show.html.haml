@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @curso.nombre
+%p
+  %b Duracion:
+  = @curso.duracion
+%p
+  %b Precio:
+  = @curso.precio
+%p
+  %b Capacidad curso:
+  = @curso.capacidad_curso
+%p
+  %b Fecha inicio:
+  = @curso.fecha_inicio
+%p
+  %b Fecha fin:
+  = @curso.fecha_fin
+
+= link_to 'Edit', edit_curso_path(@curso)
+\|
+= link_to 'Back', cursos_path
