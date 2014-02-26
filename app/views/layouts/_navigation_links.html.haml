@@ -1,18 +1,29 @@
-%li
-	= link_to 'Vecinos', vecinos_path
-%li
-	= link_to 'Fichas', fichas_path
-%li
-	= link_to 'Administradores', administradors_path
-%li
-	= link_to 'Facturas', facturas_path
-%li
-	= link_to 'Cursos', cursos_path
-%li
-	= link_to 'Materias en Curso', materia_cursos_path
-%li
-	= link_to 'Materias', materia_path
-%li
-	= link_to 'Profesores', profesors_path
-%li
-	= link_to 'Incripcion en Curso', inscripcions_path
+%li.dropdown
+	%a.dropdown-toggle{ 'data-toggle' => 'dropdown' } 
+		Administracion
+		%b.caret
+	%ul.dropdown-menu
+		%li
+			= link_to 'Vecinos', vecinos_path
+		%li
+			= link_to 'Fichas', fichas_path
+		%li
+			= link_to 'Administradores', administradors_path
+		%li
+			= link_to 'Facturas', facturas_path
+
+%li.dropdown
+	%a.dropdown-toggle{ 'data-toggle' => 'dropdown' } 
+		Cursos Admin
+		%b.caret
+	%ul.dropdown-menu
+		%li
+			= link_to 'Cursos', cursos_path
+		%li
+			= link_to 'Materias en Curso', materia_cursos_path
+		%li
+			= link_to 'Materias', materia_path
+		%li
+			= link_to 'Profesores', profesors_path
+		%li
+			= link_to 'Incripcion en Curso', inscripcions_path
