@@ -5,5 +5,7 @@ class Auditor < ActiveRecord::Base
     validates_presence_of :nombre_empresa
     validates_presence_of :direccion_empresa
     validates_presence_of :telefono
-    
+
+    has_many :auditoria
+
 end
