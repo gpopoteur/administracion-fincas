@@ -1,0 +1,16 @@
+= form_for @visitum do |f|
+  - if @visitum.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@visitum.errors.count, "error")} prohibited this visitum from being saved:"
+      %ul
+        - @visitum.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :autoria_id
+    = f.number_field :autoria_id
+  .field
+    = f.label :importe
+    = f.text_field :importe
+  .actions
+    = f.submit 'Save'

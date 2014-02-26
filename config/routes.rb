@@ -1,5 +1,9 @@
 Sigco::Application.routes.draw do
   
+  resources :visita
+
+  resources :materials
+
   resources :inscripcions
 
   resources :materia_cursos

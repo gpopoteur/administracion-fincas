@@ -1,0 +1,21 @@
+%h1 Listing visita
+
+%table
+  %tr
+    %th Autoria
+    %th Importe
+    %th
+    %th
+    %th
+
+  - @visita.each do |visitum|
+    %tr
+      %td= visitum.autoria_id
+      %td= visitum.importe
+      %td= link_to 'Show', visitum
+      %td= link_to 'Edit', edit_visitum_path(visitum)
+      %td= link_to 'Destroy', visitum, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Visitum', new_visitum_path

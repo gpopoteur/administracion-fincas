@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Autoria:
+  = @visitum.autoria_id
+%p
+  %b Importe:
+  = @visitum.importe
+
+= link_to 'Edit', edit_visitum_path(@visitum)
+\|
+= link_to 'Back', visita_path
