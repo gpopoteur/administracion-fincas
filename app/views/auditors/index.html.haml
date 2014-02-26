@@ -1,0 +1,29 @@
+%h1 Listing auditors
+
+%table
+  %tr
+    %th Nombre
+    %th Apellidos
+    %th Cif
+    %th Nombre empresa
+    %th Direccion empresa
+    %th Telefono
+    %th
+    %th
+    %th
+
+  - @auditors.each do |auditor|
+    %tr
+      %td= auditor.nombre
+      %td= auditor.apellidos
+      %td= auditor.cif
+      %td= auditor.nombre_empresa
+      %td= auditor.direccion_empresa
+      %td= auditor.telefono
+      %td= link_to 'Show', auditor
+      %td= link_to 'Edit', edit_auditor_path(auditor)
+      %td= link_to 'Destroy', auditor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Auditor', new_auditor_path
