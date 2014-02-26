@@ -19,19 +19,41 @@
   %b Fecha fin:
   = @curso.fecha_fin
 
-%h2 Materias y Profesores
+.row
+  .col-md-4
+    %h2 Materias y Profesores
+    %table
+      %tr
+        %th Nombre
+        %th Horas
+        %th Profesor
 
-%table
-  %tr
-    %th Nombre
-    %th Horas
-    %th Profesor
+      - @curso.materia.each do |materium|
+        %tr
+          %td= materium.nombre
+          %td= materium.horas
+          %td= materium.profesor != nil ? materium.profesor.nombre_completo : ''
+  .col-md-8
+    %h2 Vecinos Inscritos
+    %table
+      %tr
+        %th Dni
+        %th Nombre
+        %th Apellidos
+        %th Direccion
+        %th Cod postal
+        %th Ciudad
+        %th Telefono
 
-  - @curso.materia.each do |materium|
-    %tr
-      %td= materium.nombre
-      %td= materium.horas
-      %td= materium.profesor != nil ? materium.profesor.nombre_completo : ''
+      - @curso.vecinos.each do |vecino|
+        %tr
+          %td= vecino.DNI
+          %td= vecino.nombre
+          %td= vecino.apellidos
+          %td= vecino.direccion
+          %td= vecino.cod_postal
+          %td= vecino.ciudad
+          %td= vecino.telefono
 
 = link_to 'Edit', edit_curso_path(@curso)
 \|
