@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219103451) do
+ActiveRecord::Schema.define(version: 20140226092003) do
 
   create_table "administradors", force: true do |t|
     t.string   "nombre"
@@ -48,16 +48,24 @@ ActiveRecord::Schema.define(version: 20140219103451) do
     t.integer  "factura_id"
   end
 
+  create_table "inscripcions", force: true do |t|
+    t.integer  "vecino_id"
+    t.integer  "curso_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "materia", force: true do |t|
     t.string   "nombre"
     t.integer  "horas"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "profesor_id"
   end
 
   create_table "materia_cursos", force: true do |t|
+    t.integer  "materium_id"
     t.integer  "curso_id"
-    t.integer  "materia_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

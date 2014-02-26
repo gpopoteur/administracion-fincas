@@ -1,0 +1,21 @@
+%h1 Listing inscripcions
+
+%table
+  %tr
+    %th Vecino
+    %th Curso
+    %th
+    %th
+    %th
+
+  - @inscripcions.each do |inscripcion|
+    %tr
+      %td= inscripcion.vecino_id
+      %td= inscripcion.curso_id
+      %td= link_to 'Show', inscripcion
+      %td= link_to 'Edit', edit_inscripcion_path(inscripcion)
+      %td= link_to 'Destroy', inscripcion, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Inscripcion', new_inscripcion_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Materium:
+  = @materia_curso.materium_id
+%p
+  %b Curso:
+  = @materia_curso.curso_id
+
+= link_to 'Edit', edit_materia_curso_path(@materia_curso)
+\|
+= link_to 'Back', materia_cursos_path

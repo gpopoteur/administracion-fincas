@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Vecino:
+  = @inscripcion.vecino_id
+%p
+  %b Curso:
+  = @inscripcion.curso_id
+
+= link_to 'Edit', edit_inscripcion_path(@inscripcion)
+\|
+= link_to 'Back', inscripcions_path

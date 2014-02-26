@@ -1,0 +1,21 @@
+%h1 Listing Materias en Curso
+
+%table
+  %tr
+    %th Materium
+    %th Curso
+    %th
+    %th
+    %th
+
+  - @materia_cursos.each do |materia_curso|
+    %tr
+      %td= materia_curso.materium.nombre
+      %td= materia_curso.curso.nombre
+      %td= link_to 'Show', materia_curso
+      %td= link_to 'Edit', edit_materia_curso_path(materia_curso)
+      %td= link_to 'Destroy', materia_curso, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Materia curso', new_materia_curso_path

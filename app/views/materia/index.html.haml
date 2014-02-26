@@ -4,6 +4,7 @@
   %tr
     %th Nombre
     %th Horas
+    %th Profesor
     %th
     %th
     %th
@@ -12,6 +13,7 @@
     %tr
       %td= materium.nombre
       %td= materium.horas
+      %td= materium.profesor != nil ? materium.profesor.nombre_completo : ''
       %td= link_to 'Show', materium
       %td= link_to 'Edit', edit_materium_path(materium)
       %td= link_to 'Destroy', materium, :method => :delete, :data => { :confirm => 'Are you sure?' }

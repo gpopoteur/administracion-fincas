@@ -4,6 +4,7 @@
   %tr
     %th Nombre
     %th Duracion
+    %th Cant. Materias
     %th Precio
     %th Capacidad curso
     %th Fecha inicio
@@ -15,7 +16,8 @@
   - @cursos.each do |curso|
     %tr
       %td= curso.nombre
-      %td= curso.duracion
+      %td= curso.materia.sum(:horas)
+      %td= curso.materia.length
       %td= curso.precio
       %td= curso.capacidad_curso
       %td= curso.fecha_inicio

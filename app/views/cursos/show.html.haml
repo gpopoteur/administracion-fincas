@@ -19,6 +19,20 @@
   %b Fecha fin:
   = @curso.fecha_fin
 
+%h2 Materias y Profesores
+
+%table
+  %tr
+    %th Nombre
+    %th Horas
+    %th Profesor
+
+  - @curso.materia.each do |materium|
+    %tr
+      %td= materium.nombre
+      %td= materium.horas
+      %td= materium.profesor != nil ? materium.profesor.nombre_completo : ''
+
 = link_to 'Edit', edit_curso_path(@curso)
 \|
 = link_to 'Back', cursos_path

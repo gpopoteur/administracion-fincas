@@ -11,4 +11,13 @@ class Vecino < ActiveRecord::Base
 	has_many :facturas
 	has_many :fichas
 
+	has_many :inscripcion
+	has_many :cursos, :through => :inscripcion
+
+	# Methods
+	
+	def nombre_completo
+		self.nombre + ' ' + self.apellidos
+	end
+
 end

@@ -12,5 +12,8 @@
   .field
     = f.label :horas
     = f.number_field :horas
+  .field
+    = f.label :profesor_id
+    = f.collection_select :profesor_id, Profesor.all, :id, :nombre_completo
   .actions
     = f.submit 'Save'

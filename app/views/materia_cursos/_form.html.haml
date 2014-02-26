@@ -1,0 +1,16 @@
+= form_for @materia_curso do |f|
+  - if @materia_curso.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@materia_curso.errors.count, "error")} prohibited this materia_curso from being saved:"
+      %ul
+        - @materia_curso.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :materium_id
+    = f.collection_select :materium_id, Materium.all, :id, :nombre
+  .field
+    = f.label :curso_id
+    = f.collection_select :curso_id, Curso.all, :id, :nombre
+  .actions
+    = f.submit 'Save'
