@@ -1,0 +1,28 @@
+= form_for @auditor do |f|
+  - if @auditor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@auditor.errors.count, "error")} prohibited this auditor from being saved:"
+      %ul
+        - @auditor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nombre
+    = f.text_field :nombre
+  .field
+    = f.label :apellidos
+    = f.text_field :apellidos
+  .field
+    = f.label :cif
+    = f.text_field :cif
+  .field
+    = f.label :nombre_empresa
+    = f.text_field :nombre_empresa
+  .field
+    = f.label :direccion_empresa
+    = f.text_field :direccion_empresa
+  .field
+    = f.label :telefono
+    = f.text_field :telefono
+  .actions
+    = f.submit 'Save'
