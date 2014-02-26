@@ -10,8 +10,8 @@
 
   - @inscripcions.each do |inscripcion|
     %tr
-      %td= inscripcion.vecino_id
-      %td= inscripcion.curso_id
+      %td= inscripcion.vecino.nombre_completo
+      %td= inscripcion.curso.nombre
       %td= link_to 'Show', inscripcion
       %td= link_to 'Edit', edit_inscripcion_path(inscripcion)
       %td= link_to 'Destroy', inscripcion, :method => :delete, :data => { :confirm => 'Are you sure?' }

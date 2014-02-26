@@ -26,6 +26,11 @@ class InscripcionsController < ApplicationController
   def create
     @inscripcion = Inscripcion.new(inscripcion_params)
 
+    if @inscripcion.curso.vecinos.length == @inscripcion.curso.capacidad_curso
+      flash[:error] = 'El curso ya esta lleno'
+      return redirect_to inscripcions_path
+    end
+
     respond_to do |format|
       if @inscripcion.save
         format.html { redirect_to @inscripcion, notice: 'Inscripcion was successfully created.' }
