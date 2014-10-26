@@ -8,6 +8,6 @@
 
   .field
     = f.label :auditor_id
-    = f.number_field :auditor_id
+    = f.collection_select :auditor_id, Auditor.all, :id, :nombre
   .actions
     = f.submit 'Save'

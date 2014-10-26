@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Visitum:
+  = @materiales_auditorium.visitum_id
+%p
+  %b Autorium:
+  = @materiales_auditorium.autorium_id
+
+= link_to 'Edit', edit_materiales_auditorium_path(@materiales_auditorium)
+\|
+= link_to 'Back', materiales_auditoria_path

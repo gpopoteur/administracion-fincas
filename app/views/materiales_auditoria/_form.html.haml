@@ -1,0 +1,16 @@
+= form_for @materiales_auditorium do |f|
+  - if @materiales_auditorium.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@materiales_auditorium.errors.count, "error")} prohibited this materiales_auditorium from being saved:"
+      %ul
+        - @materiales_auditorium.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :visitum_id
+    = f.collection_select :visitum_id, Visitum.all, :id, :nombre
+  .field
+    = f.label :autorium_id
+    = f.collection_select :autorium_id, Auditorium.all, :id, :nombre
+  .actions
+    = f.submit 'Save'

@@ -1,5 +1,7 @@
 Sigco::Application.routes.draw do
   
+  resources :materiales_auditoria
+
   resources :auditoria
 
   resources :auditors

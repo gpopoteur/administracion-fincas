@@ -1,0 +1,21 @@
+%h1 Listing Materiales en Auditoria
+
+%table
+  %tr
+    %th Visitum
+    %th Autorium
+    %th
+    %th
+    %th
+
+  - @materiales_auditoria.each do |materiales_auditorium|
+    %tr
+      %td= materiales_auditorium.visitum_id
+      %td= materiales_auditorium.autorium_id
+      %td= link_to 'Show', materiales_auditorium
+      %td= link_to 'Edit', edit_materiales_auditorium_path(materiales_auditorium)
+      %td= link_to 'Destroy', materiales_auditorium, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Materiales auditorium', new_materiales_auditorium_path
